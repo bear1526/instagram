@@ -1,5 +1,25 @@
 document.addEventListener("DOMContentLoaded",
     function (e) {
+
+        var profile_pic = document.querySelector("#profile_pic .circle_pic")
+        profile_pic.addEventListener("mouseover",
+            function (e) {
+                e.target.style.filter = "grayscale(50%)"
+            }
+        )
+
+        profile_pic.addEventListener("mouseleave",
+            function (e) {
+                e.target.style.filter = "grayscale(0%)"
+            }
+        )
+
+        profile_pic.addEventListener("click",
+            function (e) {
+                profile_pic.setAttribute("src", prompt("이미지 url을 입력해 주세요!"))
+            }
+        )
+
         let configID = document.querySelector("#id i");
         let idText = document.querySelector("#id span");
 
@@ -47,4 +67,6 @@ document.addEventListener("DOMContentLoaded",
 
             }
         });
+
+
     });
